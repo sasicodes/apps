@@ -6,4 +6,4 @@ Feature: View Dashboard
   Scenario: visit the page
     Then I see at least one pool in the list
     And the first pool in the list has a positive DROP APR
-    And the total financed to date amount is positive
+    And the total value locked is positive

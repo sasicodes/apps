@@ -94,6 +94,7 @@ const PoolsMetrics: React.FC<Props> = (props: Props) => {
           icon="/static/dai.svg"
           value={
             <NumberDisplay
+              data-test="total-value-locked"
               value={hoveredPoolValue?.toString() || baseToDisplay(props.totalValue || new BN(0), 18)}
               precision={0}
             />

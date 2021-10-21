@@ -1,4 +1,3 @@
-// Dependencies
 import { After, Before, Status } from '@cucumber/cucumber'
 import { closeBrowser, openBrowser, takeScreenshot } from './browser-actions'
 import { CentrifugeWorld } from './world'

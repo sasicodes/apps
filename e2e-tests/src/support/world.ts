@@ -1,6 +1,6 @@
 import { ITinlake } from '@centrifuge/tinlake-js'
+import * as dappeteer from '@chainsafe/dappeteer'
 import { setDefaultTimeout, setWorldConstructor } from '@cucumber/cucumber'
-import * as dappeteer from 'dappeteer'
 import { Browser, Page } from 'puppeteer'
 import { config } from '../config'
 import { tinlake } from '../selectors'
@@ -24,6 +24,7 @@ export class CentrifugeWorld {
   }
 
   async metamaskInit() {
+    //@ts-expect-error
     this.metamask = await dappeteer.getMetamask(this.browser!)
   }
 
@@ -41,7 +42,6 @@ export class CentrifugeWorld {
 
   // Wrap Dappeteer metamask actions so we can bring the current page back to front after interacting with metamask
   async metamaskApprove() {
-    // @ts-ignore
     await this.metamask.approve()
     await this.currentPage.bringToFront()
   }

@@ -10,7 +10,7 @@ interface Props {
   render?: (formatted: string, prefix: string | undefined, suffix: string | undefined) => React.ReactElement
 }
 
-const NumberDisplay: React.FC<Props> = ({ value, precision, prefix, suffix, render }: Props) => {
+const NumberDisplay: React.FC<Props> = ({ value, precision, prefix, suffix, render, ...props }: Props) => {
   const valueToDecimal = new Decimal(value.toString()).toFixed(precision)
   const formatted = addThousandsSeparators(valueToDecimal.toString())
 
@@ -19,7 +19,7 @@ const NumberDisplay: React.FC<Props> = ({ value, precision, prefix, suffix, rend
   }
 
   return (
-    <span>
+    <span {...props}>
       {prefix}
       {formatted}
       {suffix}

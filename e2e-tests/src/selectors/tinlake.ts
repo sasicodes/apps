@@ -27,7 +27,7 @@ export const selectors = {
 
   dashboardPage: {
     totalFinancedToDateBox: {
-      _path: `//div[div[contains(text(), "Total Financed to Date")]]`,
+      _path: `//div[div[contains(text(), "Total Value Locked")]]`,
       value: `/div[1]/span[1]`,
     },
     poolList: {

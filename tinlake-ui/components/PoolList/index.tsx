@@ -127,7 +127,7 @@ const PoolList: React.FC<Props> = ({ poolsData }) => {
     .flat() as Column[]
 
   return (
-    <Stack gap="small">
+    <Stack gap="small" data-test="pool-list">
       {isMobile ? (
         <SectionHeading>Pools</SectionHeading>
       ) : (
